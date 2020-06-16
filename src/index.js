@@ -4,11 +4,15 @@ import { useFormik } from "formik";
 import "./styles.css";
 
 const SignupForm = () => {
+  // Pass the useFormik() hook initial form values and a submit function that will
+  // be called when the form is submitted
   const formik = useFormik({
-    initialValues: { email: "" },
+    initialValues: {
+      email: '',
+    },
     onSubmit: values => {
       alert(JSON.stringify(values, null, 2));
-    }
+    },
   });
   return (
     <form onSubmit={formik.handleSubmit}>
